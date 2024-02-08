@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!--! Bootstrap CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body class="bg-light container d-flex justify-content-center p-2 align-items-center " style="min-height: 100vh;">
+  <!--! QUİZ MAİN İNFO PAGE START -->
+  <div id="quiz-login" class=" card shadow-lg  w-75 h-100 text-center " style="height: 100vh;" >
+    <img src="https://t4.ftcdn.net/jpg/04/39/13/37/360_F_439133763_FrLdhZsd5aGC23r9ATARuKJBr8ifZjIe.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title ">Welcome to the quiz.</h5>
+      <p class="card-text">10 questions will be asked. Each question is worth 10 points. In the table below, you can see what reward is given for which score.And 5 points are deducted for each mistake.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Price</th>
+            <th scope="col">Required Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Telephone</td>
+            <td >100-90 points</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Tablet</td>
+            <td >90-75 points</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td >Earphones</td>
+            <td >75-60 points</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td >Keyboard</td>
+            <td >60-50 points</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Start Quiz
+      </button>
+    </div>
+  </div>
+  <!--! QUİZ MAİN İNFO PAGE STOP -->
+  <!--! START QUİZ MODAL START  -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Quiz is about to start.</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Are you sure you want to start?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="start" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--! START QUİZ MODAL STOP  -->
+  <!--! COMPLETE QUİZ MODAL START -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> You are sure you want to finish the test</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <p>The test will be concluded. Your results will be displayed on the screen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button id="complete" type="button" class="btn btn-primary"  data-bs-dismiss="modal">Complete quiz</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--! COMPLETE QUİZ MODAL STOP -->
+  <!--! QUESTİONS SCREEN START   -->
+  <div id="question" class="card text-left d-none p-2 w-75 w-sm-50">
+  </div>
+  <!--! QUESTİONS SCREEN STOP   -->
+  <!--! RESULT SCREEN START  -->
+  <div id="resultscreen" class="card  d-none text-center shadow-lg mt-3">
+    <div>
+      <img  id="giftimg" class="card-img-top m-auto w-50 h-50 "  alt="...">
+    </div>
+    <div class="card-body">
+      <h5 id="congralutations-title" class="card-title "></h5>
+      <div class="d-flex my-4 justify-content-center gap-1 gap-md-5">
+        <span id="correct" class="badge text-bg-success ">Correct:</span>
+        <span id="wrong" class="badge   text-bg-danger ">Wrong:</span>
+        <span id="point" class="badge   text-bg-primary ">Point:</span>
+      </div>
+      <p class="card-text">
+        <ul class="answers list-group list-group-flush text-start"></ul>
+      </p>
+      <a href="#" class="btn btn-primary">Take gift</a>
+    </div>
+  </div>
+  <!--! RESULT SCREEN STOP  -->
+  <script src="index.js"></script>
+</body>
+</html>
